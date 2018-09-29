@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  post '/webhook', to: 'webhook#webhook', constraints: { format: 'json' }
+
   get '/:twitter', to: 'accounts#show'
 end

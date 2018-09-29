@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def show
-    @account = Account.find_by(name: params[:twitter])
-    @gratitudes = @account.gratitudes
+    @user = User.find_by(name: params[:twitter])
+    @gratitudes = @user.gratitudes
   end
 end

@@ -7,6 +7,6 @@
     - @gratitudes.each do |gratitude|
       .masonry-item
         .masonry-item-content
-          %p= gratitude.body
+          %p= simple_format(gratitude.body)
           %span
-            = link_to gratitude.account.name, "#{gratitude.account.name}"
+            = link_to gratitude.user.email, "#{gratitude.user.email}"
