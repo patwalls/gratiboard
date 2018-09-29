@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+account = Account.create(name: "starter_story")
+
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
+Gratitude.create!(account_id: account.id, body: "Thanks so much for everything you do.")
