@@ -1,3 +1,69 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:  Montserrat,sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+h1 {
+  font-size: 9vw;
+  max-width: 780px;
+  line-height: 1.4;
+  margin: auto;
+}
+@media screen and (min-width: 980px) {
+  h1 {
+     font-size: 70px;
+  }
+}
+.cta {
+  padding: 15px 30px;
+  background: white;
+  display: inline-block;
+  margin-top: 40px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+   box-shadow: 0 1px 1px 0 rgba(11,13,39,0.07), 0 2px 4px 0 rgba(9,12,36,0.11);
+
+}
+.container {
+  max-width: 1120px;
+  margin: auto;
+  width: 100%;
+  padding: 100px 20px;
+}
+.green-section {
+  background: linear-gradient(#33a07f,#8bd746);
+  color: white;
+}
+.masonry {
+  column-count: 3;
+  column-gap: 0;
+}
+.masonry-item {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  padding: 15px;
+}
+.masonry-item-content {
+  box-shadow: 0 1px 1px 0 rgba(11,13,39,0.07), 0 2px 4px 0 rgba(9,12,36,0.11);
+  border-radius: 3px;
+  padding: 15px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+span {
+  padding-top: 10px;
+  display: block;
+  color: rgba(0,0,0,.44);
+}
