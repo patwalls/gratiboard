@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
   end
 
   def submit
+    return nil unless current_user
     @account = Account.find(gratitude_params[:account_id])
 
     if @account.gratitudes.create!(body: gratitude_params[:body], manual: true)

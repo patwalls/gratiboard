@@ -4,7 +4,7 @@
 
   .container.smaller
     .gratitude-submit
-      - if true
+      - if current_user
         = form_tag("/#{@account.name}/submit", method: "POST") do
           .form-group
             = label_tag(:gratitude, "Your Gratitude")
