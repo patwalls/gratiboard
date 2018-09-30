@@ -4,18 +4,18 @@
     %span
       - if gratitude.is_a?(EmailGratitude)
         .masonry-item-about
-          = fa_icon "heart"
-          = link_to gratitude.user.name, "#{gratitude.user.name}", class: "strip-color"
+          💚
+          = link_to gratitude.user.name, "#{gratitude.user.name}"
         .masonry-item-about
-          = fa_icon "envelope-open"
+          📫
           Sent via email
       - else
         .masonry-item-about
-          = fa_icon "heart"
-          = link_to gratitude.account.name, "#{gratitude.account.name}", class: "strip-color"
+          💚
+          = link_to gratitude.account.name, "#{gratitude.account.name}"
         .masonry-item-about
           - if gratitude.manual
-            = fa_icon "snapchat-ghost"
+            👻
             Added anonymously
           - else
             = fa_icon "twitter"
