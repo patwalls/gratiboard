@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-    @gratitudes = Gratitude.order(created_at: :desc).limit(100)
-    @email_gratitudes = EmailGratitude.order(created_at: :desc).limit(100)
+    @gratitudes = Gratitude.order(created_at: :desc)
+    @email_gratitudes = EmailGratitude.order(created_at: :desc)
 
-    @all_gratitudes = [@gratitudes + @email_gratitudes]
+    @all_gratitudes = @gratitudes + @email_gratitudes
   end
 
   def how_it_works
