@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @gratitudes = Gratitude.all
-    @email_gratitudes = EmailGratitude.all
+    @gratitudes = Gratitude.order(created_at: :desc)
+    @email_gratitudes = EmailGratitude.order(created_at: :desc)
 
     @all_gratitudes = @gratitudes + @email_gratitudes
   end
