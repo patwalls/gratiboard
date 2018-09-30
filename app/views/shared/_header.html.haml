@@ -1,7 +1,8 @@
 %section.green-section.no-gradient
   .header
     .logo
-      = link_to "Gratiboard", root_path, class: "strip-color"
+      = link_to root_path, class: "strip-color" do
+        = image_tag "gratiboard.png", class: "logo-image"
     .right
       - if current_user
         = link_to "Dashboard", user_path(current_user), class: "strip-color"

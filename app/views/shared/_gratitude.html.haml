@@ -1,18 +1,22 @@
 .masonry-item
   .masonry-item-content
-    %p= simple_format(gratitude.body)
-    %span
+    %span{ style: "padding-bottom: 20px;" }
       - if gratitude.is_a?(EmailGratitude)
         .masonry-item-about
-          💚
+          = fa_icon "heart"
           = link_to gratitude.user.name, "#{gratitude.user.name}"
+      - else
+        .masonry-item-about
+          = fa_icon "heart"
+          = link_to gratitude.account.name, "#{gratitude.account.name}"
+
+    %p= simple_format(truncate(gratitude.body, length: 200))
+    %span{ style: "padding-top: 10px;" }
+      - if gratitude.is_a?(EmailGratitude)
         .masonry-item-about
           📫
           Sent via email
       - else
-        .masonry-item-about
-          💚
-          = link_to gratitude.account.name, "#{gratitude.account.name}"
         .masonry-item-about
           - if gratitude.manual
             👻

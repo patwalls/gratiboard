@@ -117,7 +117,6 @@ p {
   line-height: 1.6;
 }
 span {
-  padding-top: 10px;
   display: block;
   color: rgba(0,0,0,.44);
 }
@@ -191,4 +190,11 @@ span {
     margin-top: 5px;
     margin-bottom: 5px;
   }
+}
+
+.fa-twitter { color: #0084b4; }
+.fa-heart { color: red; }
+
+.logo-image {
+  width: 50px;
 }
