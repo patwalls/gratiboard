@@ -15,8 +15,8 @@
           = link_to gratitude.account.name, "#{gratitude.account.name}", class: "strip-color"
         .masonry-item-about
           - if gratitude.manual
-            = fa_icon "plus-square"
-            Added by #{gratitude.account.name}
+            = fa_icon "snapchat-ghost"
+            Added anonymously
           - else
             = fa_icon "twitter"
-            = link_to "TODO", "https://twitter.com/statuses/#{gratitude.tweet}", class: "strip-color"
+            = link_to "Added from Twitter", "https://twitter.com/statuses/#{gratitude.tweet}", class: "strip-color"

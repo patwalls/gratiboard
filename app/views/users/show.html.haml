@@ -5,7 +5,7 @@
       %a.cta{:href => "/auth/twitter" } Connect Your Twitter
       %p{style: "margin-top: 20px" } Before we get started, please connect your Twitter account.
     - else
-      %a.cta{:href => "/#{@user.accounts&.first&.name}/submit" } Your Gratiboard!
+      %a.cta{:href => "/#{@user.accounts&.first&.name}" } Your Gratiboard!
 
 
       .container.masonry.dashboard
