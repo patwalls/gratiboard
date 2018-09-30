@@ -4,7 +4,7 @@
 
   .container.smaller
     .gratitude-submit
-      - if current_user
+      - if Rails.env.production? && current_user
         = form_tag("/#{@account.name}/submit", method: "POST") do
           .form-group
             = label_tag(:gratitude, "Your Gratitude")
@@ -14,4 +14,4 @@
       - else
         .masonry-item
           .masonry-item-content{ style: "text-align: center;"}
-            Please sign up to give gratitude directly.
+            Manual submission currently turned off to fight off spammers :)
