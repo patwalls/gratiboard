@@ -2,7 +2,7 @@
   .container.text-center
     %h1 Collect All The Nice Things People Say
     %a.cta{:href => new_user_registration_path } Start Collecting
-%section
+
   .container.masonry
     - @all_gratitudes.each do |gratitude|
       = render "shared/gratitude", gratitude: gratitude

@@ -1,0 +1,21 @@
+%section.green-section
+  .container.text-center
+    %h1 Log in
+
+  .container.smaller
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field.input-container
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field.input-container
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .field.input-container
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Log in", class: "call-to-action-button"
+    = render "devise/shared/links"

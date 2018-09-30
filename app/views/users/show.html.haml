@@ -1,6 +1,14 @@
 %section.green-section
   .container.text-center
-    %h1= @user.email
-    %p Here's your custom email
-    %p= "forward+#{@user.email_token}@gratiboard.io"
-    = link_to "Sign in with Twitter", "/auth/twitter"
+    %h1 Dashboard
+
+  .container.masonry
+    .masonry-item
+      .masonry-item-content
+        %p Here's your custom email
+        %p= "forward+#{@user.email_token}@gratiboard.io"
+  .container.masonry
+    .masonry-item
+      .masonry-item-content
+        %p Sign up with Twitter
+        = link_to "Sign in with Twitter", "/auth/twitter"

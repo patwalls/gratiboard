@@ -38,8 +38,17 @@ h1 {
   max-width: 1120px;
   margin: auto;
   width: 100%;
-  padding: 100px 20px;
+  padding: 100px 0px 20px;
+
+  &.hero {
+    padding: 100px 20px;
+  }
+
+  &.smaller {
+    max-width: 600px;
+  }
 }
+
 .green-section {
   &.no-gradient {
     background: #33a07f;
@@ -83,10 +92,16 @@ h1 {
   transition: all 0.5s;
   box-shadow: 0 1px 1px 0 rgba(11, 13, 39, 0.07), 0 2px 4px 0 rgba(9, 12, 36, 0.11);
   border-radius: 5px;
+  background-color: white;
+  color: #6B7C93;
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  p {
+    font-size: 20px;
   }
 }
 p {
@@ -102,4 +117,44 @@ span {
 .strip-color {
   text-decoration: none;
   color: inherit;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  outline: none;
+  display: flex;
+
+  label {
+    margin-top: 10px;
+  }
+
+  input {
+    height: 30px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    padding-left: 10px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.call-to-action-button {
+  background-color: #ff9999;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    -webkit-transition: transform .25s ease-in-out;
+    -moz-transition: transform .25s ease-in-out;
+    -ms-transition: transform .25s ease-in-out;
+  }
 }
