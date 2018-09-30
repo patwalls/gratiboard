@@ -19,4 +19,4 @@
           = image_tag("nice_tweet.png")
     .masonry-item
       .masonry-item-content
-        = link_to "Submit manually", "#{@user.accounts.first.name}/submit"
+        = link_to "Submit manually", "#{@user.accounts&.first&.name}/submit"
