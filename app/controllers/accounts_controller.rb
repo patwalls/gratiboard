@@ -7,6 +7,8 @@ class AccountsController < ApplicationController
       @email_gratitudes = @account.user.email_gratitudes
       @all_gratitudes = @all_gratitudes + @email_gratitudes
     end
+
+    @all_gratitudes.sort! { |a, b|  b.created_at <=> a.created_at }
   end
 
   def submit_page
