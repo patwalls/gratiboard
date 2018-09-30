@@ -4,9 +4,14 @@
 
   .container.smaller
     .gratitude-submit
-      = form_tag("/#{@account.name}/submit", method: "POST") do
-        .form-group
-          = label_tag(:gratitude, "Your Gratitude")
-          = text_area(:gratitude, :body, class: "form-control")
-        = hidden_field("gratitude", "account_id", value: @account.id)
-        = submit_tag("Submit Your Gratitude", class: "btn btn-primary")
+      - if current_user
+        = form_tag("/#{@account.name}/submit", method: "POST") do
+          .form-group
+            = label_tag(:gratitude, "Your Gratitude")
+            = text_area(:gratitude, :body, class: "form-control")
+          = hidden_field("gratitude", "account_id", value: @account.id)
+          = submit_tag("Submit Your Gratitude", class: "btn btn-primary")
+      - else
+        .masonry-item
+          .masonry-item-content{ style: "text-align: center;"}
+            You need to be logged in to give gratitude directly.
