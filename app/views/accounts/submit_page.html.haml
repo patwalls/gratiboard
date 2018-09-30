@@ -1,0 +1,10 @@
+%section.green-section
+  .container.text-center
+    %h1= @account.name
+
+= form_tag("/#{@account.name}/submit", method: "POST") do
+  .form-group
+    = label_tag(:gratitude, "Body")
+    = text_area(:gratitude, :body, class: "form-control")
+  = hidden_field("gratitude", "account_id", value: @account.id)
+  = submit_tag("Update Profile", class: "btn btn-primary")

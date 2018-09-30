@@ -5,12 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-user = User.create(name: "starter_story")
-
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")
-Gratitude.create!(user: user, body: "Thanks so much for everything you do.")

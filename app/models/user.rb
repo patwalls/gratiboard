@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   before_create :generate_email_token
 
-  has_many :gratitudes
+  has_many :email_gratitudes
+  has_many :accounts, :foreign_key => 'name', :primary_key => 'name'
+  has_many :gratitudes, through: :accounts
 
   def generate_email_token
     self.email_token = SecureRandom.base58(24)

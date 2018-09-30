@@ -5,6 +5,6 @@ class WebhookController < ApplicationController
     token = params["To"]&.split("@")&.first&.split("+")&.second
     user = User.find_by(email_token: token)
     message = params["stripped-text"].split("--")[0]
-    user.gratitudes.create!(body: message)
+    user.email_gratitudes.create!(body: message)
   end
 end

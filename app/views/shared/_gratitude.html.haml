@@ -1,0 +1,18 @@
+.masonry-item
+  .masonry-item-content
+    %p= simple_format(gratitude.body)
+    %span
+      - if gratitude.is_a?(EmailGratitude)
+        .masonry-item-about
+          = fa_icon "heart"
+          = link_to gratitude.user.name, "#{gratitude.user.name}", class: "strip-color"
+        .masonry-item-about
+          = fa_icon "envelope-open"
+          Sent via email
+      - else
+        .masonry-item-about
+          = fa_icon "heart"
+          = link_to gratitude.account.name, "#{gratitude.account.name}", class: "strip-color"
+        .masonry-item-about
+          = fa_icon "twitter"
+          = link_to "TODO", "https://twitter.com/statuses/#{gratitude.tweet}", class: "strip-color"

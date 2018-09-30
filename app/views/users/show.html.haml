@@ -3,3 +3,4 @@
     %h1= @user.email
     %p Here's your custom email
     %p= "forward+#{@user.email_token}@gratiboard.io"
+    = link_to "Sign in with Twitter", "/auth/twitter"

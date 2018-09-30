@@ -1,6 +1,7 @@
 %section.green-section
   .container.text-center
-    %h1 Starter Story
+    %h1= @account.name
+    %a.cta{:href => "#{@account.name}/submit"} Submit Gratitude
 
 %section
   .container.masonry

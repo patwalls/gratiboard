@@ -1,4 +1,9 @@
-- if current_user
-  = link_to "Sign Out", destroy_user_session_path, method: :delete
-- else
-  = link_to "Sign In", new_user_session_path
+%section.green-section.no-gradient
+  .header
+    .logo
+      = link_to "Gratiboard", root_path, class: "strip-color"
+    .right
+      - if current_user
+        = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "strip-color"
+      - else
+        = link_to "Sign In", new_user_registration_path, class: "strip-color"

@@ -1,12 +1,8 @@
 %section.green-section
   .container.text-center
-    %h1 Collect All The Nice Things People Sayx
-    %a.cta{:href => ""} Call To Action
+    %h1 Collect All The Nice Things People Say
+    %a.cta{:href => new_user_registration_path } Start Collecting
 %section
   .container.masonry
-    - @gratitudes.each do |gratitude|
-      .masonry-item
-        .masonry-item-content
-          %p= simple_format(gratitude.body)
-          %span
-            = link_to gratitude.user.email, "#{gratitude.user.email}"
+    - @all_gratitudes.each do |gratitude|
+      = render "shared/gratitude", gratitude: gratitude
