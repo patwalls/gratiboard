@@ -3,11 +3,6 @@
     %h1= @account.name
     %a.cta{:href => "#{@account.name}/submit"} Submit Gratitude
 
-%section
   .container.masonry
-    - @gratitudes.each do |gratitude|
-      .masonry-item
-        .masonry-item-content
-          %p= gratitude.body
-          %span
-            = link_to gratitude.account.name, "#{gratitude.account.name}"
+    - @all_gratitudes.each do |gratitude|
+      = render "shared/gratitude", gratitude: gratitude

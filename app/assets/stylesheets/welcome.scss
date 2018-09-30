@@ -50,6 +50,10 @@ h1 {
 }
 
 .green-section {
+  &.main {
+    height: 100vh;
+  }
+
   &.no-gradient {
     background: #33a07f;
   }
@@ -79,6 +83,10 @@ h1 {
     column-count: 1;
     column-gap: 0;
   }
+
+  &.dashboard {
+    column-count: 1;
+  }
 }
 .masonry-item {
   break-inside: avoid;
@@ -100,8 +108,8 @@ h1 {
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
   }
 
-  p {
-    font-size: 20px;
+  img {
+    width: 100%;
   }
 }
 p {
@@ -156,5 +164,15 @@ span {
     -webkit-transition: transform .25s ease-in-out;
     -moz-transition: transform .25s ease-in-out;
     -ms-transition: transform .25s ease-in-out;
+  }
+}
+
+.gratitude-submit {
+  textarea {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    height: 100px;
   }
 }

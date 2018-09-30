@@ -1,10 +1,12 @@
-%section.green-section
+%section.green-section.main
   .container.text-center
-    %h1= @account.name
+    %h1 Give Gratitude
 
-= form_tag("/#{@account.name}/submit", method: "POST") do
-  .form-group
-    = label_tag(:gratitude, "Body")
-    = text_area(:gratitude, :body, class: "form-control")
-  = hidden_field("gratitude", "account_id", value: @account.id)
-  = submit_tag("Update Profile", class: "btn btn-primary")
+  .container.smaller
+    .gratitude-submit
+      = form_tag("/#{@account.name}/submit", method: "POST") do
+        .form-group
+          = label_tag(:gratitude, "Your Gratitude")
+          = text_area(:gratitude, :body, class: "form-control")
+        = hidden_field("gratitude", "account_id", value: @account.id)
+        = submit_tag("Submit Your Gratitude", class: "btn btn-primary")

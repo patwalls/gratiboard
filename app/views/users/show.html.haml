@@ -1,14 +1,22 @@
 %section.green-section
   .container.text-center
-    %h1 Dashboard
+    %h1 How To Add Gratitude
 
-  .container.masonry
+  .container.masonry.dashboard
     .masonry-item
       .masonry-item-content
-        %p Here's your custom email
+        %p Forward any nice emails you get here:
         %p= "forward+#{@user.email_token}@gratiboard.io"
-  .container.masonry
+        %p Make sure to include what you want to share above the forwarded line:textile
+        %p
+          = image_tag("nice_email.png")
     .masonry-item
       .masonry-item-content
         %p Sign up with Twitter
         = link_to "Sign in with Twitter", "/auth/twitter"
+        %p Reply to a nice tweet with @gratiboard
+        %p
+          = image_tag("nice_tweet.png")
+    .masonry-item
+      .masonry-item-content
+        = link_to "Submit manually", "#{@user.accounts.first.name}/submit"

@@ -1,8 +1,12 @@
 class AccountsController < ApplicationController
   def show
     @account = Account.find_by(name: params[:twitter])
-    @gratitudes = @account.gratitudes
-    @email_gratitudes = @user.email_gratitudes if @account.user
+    @all_gratitudes = @account.gratitudes
+
+    if @account.user
+      @email_gratitudes = @user.email_gratitudes
+      @all_gratitudes = @gratitudes + @email_gratitudes
+    end
   end
 
   def submit_page
