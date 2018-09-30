@@ -1,0 +1,30 @@
+%section.green-section
+  .container.text-center
+    %h1 How It Works
+
+  .container.masonry.dashboard
+    .masonry-item
+      %h1 1. Forward an email
+      .masonry-item-content
+        .instructions
+          Forward any nice emails you get to your own email address.
+          .custom-email
+            = "forward+123@gratiboard.io"
+          Include what you want to share above the forwarded line.
+          = image_tag("nice_email.png")
+    .masonry-item
+      %h1 2. Tag us on Twitter
+      .masonry-item-content
+        .instructions
+          Reply to a nice tweet with @gratiboard
+          = image_tag("nice_tweet.png")
+    .masonry-item
+      %h1 3. Submit your own.
+      .masonry-item-content
+        .instructions
+          = link_to "/thepatwalls/submit" do
+            = image_tag("nice_submit.png")
+
+  .container.text-center
+    %h1 Start collecting gratitude today!
+    %a.cta{:href => new_user_registration_path } Sign Up

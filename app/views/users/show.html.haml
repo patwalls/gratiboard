@@ -1,22 +1,32 @@
-%section.green-section
+%section.green-section.main
   .container.text-center
-    %h1 How To Add Gratitude
+    %h1 Dashboard
+    - if @user.name.blank?
+      %a.cta{:href => "/auth/twitter" } Connect Your Twitter
+      %p{style: "margin-top: 20px" } Before we get started, please connect your Twitter account.
+    - else
+      %a.cta{:href => "/#{@user.accounts&.first&.name}/submit" } Your Gratiboard!
 
-  .container.masonry.dashboard
-    .masonry-item
-      .masonry-item-content
-        %p Forward any nice emails you get here:
-        %p= "forward+#{@user.email_token}@gratiboard.io"
-        %p Make sure to include what you want to share above the forwarded line:textile
-        %p
-          = image_tag("nice_email.png")
-    .masonry-item
-      .masonry-item-content
-        %p Sign up with Twitter
-        = link_to "Sign in with Twitter", "/auth/twitter"
-        %p Reply to a nice tweet with @gratiboard
-        %p
-          = image_tag("nice_tweet.png")
-    .masonry-item
-      .masonry-item-content
-        = link_to "Submit manually", "#{@user.accounts&.first&.name}/submit"
+
+      .container.masonry.dashboard
+        .masonry-item
+          %h1 1. Forward an email
+          .masonry-item-content
+            .instructions
+              Forward any nice emails you get to your own email address.
+              .custom-email
+                = "forward+#{@user.email_token}@gratiboard.io"
+              Include what you want to share above the forwarded line.
+              = image_tag("nice_email.png")
+        .masonry-item
+          %h1 2. Tag us on Twitter
+          .masonry-item-content
+            .instructions
+              Reply to a nice tweet with @gratiboard
+              = image_tag("nice_tweet.png")
+        .masonry-item
+          %h1 3. Submit your own.
+          .masonry-item-content
+            .instructions
+              = link_to "/thepatwalls/submit" do
+                = image_tag("nice_submit.png")

@@ -176,3 +176,19 @@ span {
     height: 100px;
   }
 }
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .custom-email {
+    background-color: #C8C8C8;
+    background-color: #C8C8C8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}

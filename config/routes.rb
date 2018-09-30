@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
+  get "/how_it_works", to: "welcome#how_it_works"
 
   resources :users, only: [:show]
 

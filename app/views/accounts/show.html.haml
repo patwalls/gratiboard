@@ -1,7 +1,7 @@
 %section.green-section
   .container.text-center
     %h1= @account.name
-    %a.cta{:href => "#{@account.name}/submit"} Submit Gratitude
+    %a.cta{:href => "#{@account.name}/submit"} Submit Gratitude to @#{@account.name}
 
   .container.masonry
     - @all_gratitudes.each do |gratitude|

@@ -4,8 +4,8 @@ class AccountsController < ApplicationController
     @all_gratitudes = @account.gratitudes
 
     if @account.user
-      @email_gratitudes = @user.email_gratitudes
-      @all_gratitudes = @gratitudes + @email_gratitudes
+      @email_gratitudes = @account.user.email_gratitudes
+      @all_gratitudes = @all_gratitudes + @email_gratitudes
     end
   end
 
@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
   def submit
     @account = Account.find(gratitude_params[:account_id])
 
-    if @account.gratitudes.create!(body: gratitude_params[:body])
+    if @account.gratitudes.create!(body: gratitude_params[:body], manual: true)
       flash[:success] = "Gratitude submitted! Thanks!"
       redirect_to "/#{@account.name}"
     end

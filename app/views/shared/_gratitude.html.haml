@@ -14,5 +14,9 @@
           = fa_icon "heart"
           = link_to gratitude.account.name, "#{gratitude.account.name}", class: "strip-color"
         .masonry-item-about
-          = fa_icon "twitter"
-          = link_to "TODO", "https://twitter.com/statuses/#{gratitude.tweet}", class: "strip-color"
+          - if gratitude.manual
+            = fa_icon "plus-square"
+            Added by #{gratitude.account.name}
+          - else
+            = fa_icon "twitter"
+            = link_to "TODO", "https://twitter.com/statuses/#{gratitude.tweet}", class: "strip-color"

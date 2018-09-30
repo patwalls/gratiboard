@@ -5,4 +5,7 @@ class WelcomeController < ApplicationController
 
     @all_gratitudes = @gratitudes + @email_gratitudes
   end
+
+  def how_it_works
+  end
 end
