@@ -8,6 +8,15 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    - if Rails.env.production?
+      %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-75503228-6"}
+      :javascript
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-75503228-6');
+
   %body
     = render "shared/header"
     = yield
